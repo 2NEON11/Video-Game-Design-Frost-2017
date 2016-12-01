@@ -1,9 +1,14 @@
-public class CheckState(MonoBehaviour):
+using UnityEngine;
+using System.Collections;
 
-    public myObject as GameObject
-
+public class CheckState : MonoBehaviour
+{
+    public GameObject myObject;
     
-    private def Start():
-        Debug.Log(('Active Self: ' + myObject.activeSelf))
-        Debug.Log(('Active in Hierarchy' + myObject.activeInHierarchy))
-
+    
+    void Start ()
+    {
+        Debug.Log("Active Self: " + myObject.activeSelf);
+        Debug.Log("Active in Hierarchy" + myObject.activeInHierarchy);
+    }
+}
