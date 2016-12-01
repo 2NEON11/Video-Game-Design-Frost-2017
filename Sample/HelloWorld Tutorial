@@ -1,0 +1,5 @@
+public class HelloWorld : Monobehviour{
+void Update{
+Debug.Log("Hello World")
+}
+}
