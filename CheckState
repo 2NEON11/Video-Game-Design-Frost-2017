@@ -1,0 +1,9 @@
+public class CheckState(MonoBehaviour):
+
+    public myObject as GameObject
+
+    
+    private def Start():
+        Debug.Log(('Active Self: ' + myObject.activeSelf))
+        Debug.Log(('Active in Hierarchy' + myObject.activeInHierarchy))
+
