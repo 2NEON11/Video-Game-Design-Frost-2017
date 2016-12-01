@@ -1,0 +1,17 @@
+using UnityEngine;
+using System.Collections;
+using UnityEditor;
+
+public class MakeObject 
+{
+    [MenuItem("Assets/Create/Object")] //Getting Asset
+    public static void Create()
+    {
+        WeaponObject asset = ScriptableObject.CreateInstance<Object> (); //Building/Generating the Asset
+        AssetDatabase.CreateAsset (asset, "Assets/Object.asset");
+        AssetDatabase.SaveAssets ();
+        EditorUtility.FocusProjectWindow ();
+        Selection.activeObject = asset;
+    }
+    
+}
