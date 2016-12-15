@@ -1,3 +1,29 @@
 //This will be the AI script
 //Devoloper: Sharad Khanna
 //NOTE: We will make a different script for the king
+ public class FollowAI : MonoBehaviour {
+ 
+     public GameObject target; //the enemy's target
+     public float moveSpeed = 5; //move speed
+     public float rotationSpeed = 5; //speed of turning
+     private Rigidbody rb;
+     private Vector2 mytransform = target;
+ 
+     void Start()
+     {
+         rb = GetComponent<Rigidbody>();
+     }
+ 
+ 
+    void Update()
+     {
+         //rotate to look at the player
+         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), rotationSpeed * Time.deltaTime);
+ 
+ 
+         //move towards the player
+         transform.position += transform.forward * Time.deltaTime * moveSpeed;
+ 
+     }
+ 
+ }
